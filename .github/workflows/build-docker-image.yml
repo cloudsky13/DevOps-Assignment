@@ -1,0 +1,29 @@
+name: build-docker-image
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ]
+env:
+  IMAGE_NAME: print-text 
+  DOC_USER: ${{ secrets.DOCKERHUB_USERNAME }} 
+  DOC_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: |
+          docker build -t $DOCKER_REPOSITORY/$IMAGE_NAME:$GITHUB_RUN_NUMBER .
+          
+
+      - name: Login to Docker Hub
+        run: |
+          echo "${{ secrets.DOC_PASS }}" | docker login -u $DOC_USER --password-stdin
+  
+      - name: Push Image to Docker Hub
+        run:
+          docker push 
