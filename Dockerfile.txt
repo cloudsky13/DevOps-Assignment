@@ -1,6 +1,5 @@
 FROM ubuntu
 
-RUN cat Hello from the other side >> welcome.txt
+COPY welcome.txt welcome.txt
 
-CMD ["cat","welcome.txt"]
-
+ENTRYPOINT ["cat","welcome.txt"]
