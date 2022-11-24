@@ -1,0 +1,6 @@
+FROM ubuntu
+
+RUN cat Hello from the other side >> welcome.txt
+
+CMD ["cat","welcome.txt"]
+
