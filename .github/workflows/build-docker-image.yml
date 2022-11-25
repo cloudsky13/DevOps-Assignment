@@ -17,5 +17,5 @@ jobs:
       - name: Build & Push Docker Image
         run: |
           echo "$DOC_PASS" | docker login -u "$DOC_USER" --password-stdin
-          docker image build -t DOC_USER/print:$GITHUB_RUN_NUMBER .
-          docker push DOC_USER/print:$GITHUB_RUN_NUMBER
+          docker image build -t $DOC_USER/print:$GITHUB_RUN_NUMBER .
+          docker push $DOC_USER/print:$GITHUB_RUN_NUMBER
