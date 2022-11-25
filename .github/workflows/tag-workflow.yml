@@ -14,7 +14,7 @@ jobs:
       - name: Print image tag
         run: |
           echo "$DOC_PASS" | docker login -u "$DOC_USER" --password-stdin
-          docker pull $DOC_USER/IMAGE_NAME --all-tags
+          docker pull $DOC_USER/$IMAGE_NAME --all-tags
           echo "Latest tag for docker image"
           docker images | grep -m 1 sky | awk '{print $2}'
           
