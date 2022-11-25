@@ -1,0 +1,12 @@
+name: tag-workflow
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print image tag
+        run: |
+          echo "Hello-test-workflow-trigger"
