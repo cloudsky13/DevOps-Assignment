@@ -19,8 +19,9 @@ jobs:
           echo "$DOC_PASS" | docker login -u "$DOC_USER" --password-stdin
           docker image build -t $DOC_USER/$IMAGE_NAME:$GITHUB_RUN_NUMBER .
           docker push $DOC_USER/$IMAGE_NAME:$GITHUB_RUN_NUMBER
+          
       - name: Trigger next workflow to print tag
-      - uses: convictional/trigger-workflow-and-wait@v1.3.0
+        uses: convictional/trigger-workflow-and-wait@v1.3.0
         with:
           owner: cloudsky13
           repo: DevOps-Assignment
