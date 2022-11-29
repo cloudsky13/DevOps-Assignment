@@ -34,7 +34,7 @@ jobs:
         with:
           token: ${{ secrets.GIT_TOKEN }}
           repository: cloudsky13/Downstream-Repo
-          event-type: custom_event
+          event-type: custom-event
           client-payload: '{"sha": "${{ github.sha }}"}'
 
 
