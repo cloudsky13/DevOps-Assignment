@@ -59,6 +59,12 @@ jobs:
           token: ${{ secrets.GIT_TOKEN }}
           repository: cloudsky13/Downstream-Repo
           event-type: custom-event
+          client-payload: >
+            {"component":
+              {
+                "name":"${{ matrix.user.name }}"
+              }
+            }  
 
 
 
