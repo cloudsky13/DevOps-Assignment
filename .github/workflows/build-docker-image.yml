@@ -12,7 +12,7 @@ env:
   DOC_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
   TAG: ${{ github.sha }}
   IMAGE_PATH_1: ./Dockerfile
-  IMAGE_PATH_2: ./DockerFile_2
+  IMAGE_PATH_2: ./DockerFile-2
 
 jobs:
   test-workflows:
